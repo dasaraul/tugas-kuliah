@@ -52,7 +52,7 @@ Berikut adalah struktur folder dan file dalam proyek ini:
 1. **Clone Repository**:
    - Salin repositori ini ke komputer Anda.
    ```bash
-   git clone [<repository-url>](https://github.com/dasaraul/tugas-kuliah)
+   git clone https://github.com/dasaraul/tugas-kuliah
    ```
 
 2. **Instalasi Database**:
