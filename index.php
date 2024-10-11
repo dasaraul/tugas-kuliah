@@ -22,9 +22,14 @@ $tugas = tampilkanTugas($conn);
 <body>
     <header>
         <h1>Daftar Tugas Kuliah</h1>
-        <?php if (isset($_SESSION['admin'])): ?>
-            <a href="auth/logout.php" class="btn">Logout</a>
-        <?php endif; ?>
+        <div class="header-actions">
+            <?php if (isset($_SESSION['admin'])): ?>
+                <a href="auth/logout.php" class="btn">Logout</a>
+            <?php else: ?>
+                <a href="auth/login.php" class="btn">Login</a>
+                <a href="auth/register.php" class="btn">Register</a>
+            <?php endif; ?>
+        </div>
     </header>
 
     <main>

@@ -1,11 +1,17 @@
+html, body {
+    height: 100%; /* Pastikan tinggi body 100% dari viewport */
+    margin: 0; /* Hapus margin */
+}
+
 body {
+    display: flex;
+    flex-direction: column; /* Atur layout menjadi kolom */
     font-family: Arial, sans-serif;
     background-image: url('https://images3.alphacoders.com/137/thumb-1920-1374575.png');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     color: #ffffff;
-    margin: 0;
     padding: 0;
 }
 
@@ -21,8 +27,10 @@ main {
     background: rgba(128, 128, 128, 0.1); /* Background abu-abu dengan opacity 10% */
     padding: 20px;
     border-radius: 5px;
-    margin-top: 20px;
+    margin: 20px auto; /* Centering the main container */
+    width: 50%; /* Set width to 50% */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Membuat main tumbuh untuk mengisi ruang yang tersedia */
 }
 
 table {
@@ -132,4 +140,8 @@ button {
 
 button:hover {
     background-color: #217dbb;
+}
+
+footer {
+    margin-top: auto; /* Buat footer selalu di bawah */
 }
