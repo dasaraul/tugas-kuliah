@@ -1,7 +1,4 @@
-
-# 📝 README.md
-
-## Deskripsi Proyek
+## Deskripsi 
 Ini adalah aplikasi **Manajemen Tugas Kuliah** yang memungkinkan pengguna untuk mengelola dan mengunggah tugas kuliah mereka. Pengguna dapat menambahkan, mengedit, dan menghapus tugas serta mengunduh file tugas. Proyek ini dirancang untuk membantu mahasiswa dalam mengorganisir tugas mereka dengan lebih baik.
 
 ## Fitur Utama
