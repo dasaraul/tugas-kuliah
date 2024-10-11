@@ -1,32 +1,37 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-image: url('https://images3.alphacoders.com/137/thumb-1920-1374575.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #ffffff;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #3498db;
-    color: white;
+header, footer {
+    background: rgba(0, 0, 0, 0.7); /* Warna hitam dengan opacity 0.7 */
+    color: #ffffff;
     padding: 15px 20px;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 main {
-    background: white;
+    background: rgba(255, 255, 255, 0.85); /* Background putih dengan opacity */
     padding: 20px;
     border-radius: 5px;
     margin-top: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Putih dengan sedikit transparansi */
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 table, th, td {
@@ -39,20 +44,22 @@ th, td {
 }
 
 th {
-    background-color: #f4f4f4;
+    background-color: rgba(0, 0, 0, 0.7); /* Hitam transparan */
+    color: #ffffff;
 }
 
 .btn {
-    background-color: #3498db;
-    color: white;
-    padding: 5px 10px;
+    background-color: #3498db; /* Warna biru */
+    color: #ffffff;
+    padding: 8px 12px;
     border-radius: 5px;
     text-decoration: none;
     margin-right: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #217dbb;
+    background-color: #217dbb; /* Biru lebih tua saat hover */
 }
 
 form div {
@@ -62,22 +69,39 @@ form div {
 form label {
     display: block;
     margin-bottom: 5px;
+    color: #333333;
 }
 
-input[type="text"], input[type="file"] {
+input[type="text"], input[type="password"], input[type="file"] {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 button {
     background-color: #3498db;
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #217dbb;
+}
+
+ul.tugas-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.tugas-list li {
+    background: rgba(0, 0, 0, 0.5); /* Background hitam transparan untuk tiap item */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
 }

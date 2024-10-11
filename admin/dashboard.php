@@ -62,6 +62,10 @@ $tugas = tampilkanTugas($conn);
         <?php endif; ?>
     </main>
 
+    <footer>
+        <center>&copy; 2024 Tugas Kuliah</center>
+    </footer>
+
     <script>
         // Fungsi untuk konfirmasi hapus menggunakan sweetalert
         function confirmDelete(id) {
