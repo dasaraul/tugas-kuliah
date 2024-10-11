@@ -3,26 +3,24 @@ session_start();
 include('../config/database.php');
 include('../functions.php');
 
-// Cek apakah user sudah login
+// Cek apakah user sudah login, kalau belum arahkan ke login
 if (!isset($_SESSION['admin'])) {
     header('Location: ../auth/login.php');
     exit();
 }
 
-// Ambil data tugas berdasarkan ID
+// Ambil data tugas berdasarkan ID dari URL
 $id = $_GET['id'];
-$sql = "SELECT * FROM tugas WHERE id=$id";
-$result = $conn->query($sql);
-$tugas = $result->fetch_assoc();
+$tugas = getTugasById($id, $conn);
 
-// Proses update tugas
+// Proses update tugas ketika form di-submit
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nama_tugas = $_POST['nama_tugas'];
     $mata_kuliah = $_POST['mata_kuliah'];
-    $file_tugas = $_FILES['file_tugas']['name'] ? uploadFile() : $tugas['file_tugas']; // Cek jika ada file baru yang di-upload
+    $file_tugas = $_FILES['file_tugas']['name'] ? uploadFile() : $tugas['file_tugas'];
 
     updateTugas($id, $nama_tugas, $mata_kuliah, $file_tugas, $conn);
-    header('Location: dashboard.php');
+    header('Location: dashboard.php?status=updated');
     exit();
 }
 ?>
@@ -45,16 +43,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form action="" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="nama_tugas">Nama Tugas</label>
-                <input type="text" name="nama_tugas" value="<?php echo $tugas['nama_tugas']; ?>" required>
+                <input type="text" name="nama_tugas" value="<?= $tugas['nama_tugas']; ?>" required>
             </div>
             <div>
                 <label for="mata_kuliah">Mata Kuliah</label>
-                <input type="text" name="mata_kuliah" value="<?php echo $tugas['mata_kuliah']; ?>" required>
+                <input type="text" name="mata_kuliah" value="<?= $tugas['mata_kuliah']; ?>" required>
             </div>
             <div>
                 <label for="file_tugas">File Tugas</label>
                 <input type="file" name="file_tugas">
-                <p>File saat ini: <?php echo $tugas['file_tugas']; ?></p>
+                <p>File saat ini: <?= $tugas['file_tugas']; ?></p>
             </div>
             <div>
                 <button type="submit" class="btn">Update</button>

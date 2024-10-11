@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Admin</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header>
@@ -51,7 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="password" name="password" required>
             </div>
             <?php if (isset($error)): ?>
-                <p style="color:red;"><?php echo $error; ?></p>
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Login Gagal',
+                        text: '<?= $error; ?>',
+                    });
+                </script>
             <?php endif; ?>
             <div>
                 <button type="submit" class="btn">Login</button>

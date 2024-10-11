@@ -1,78 +1,83 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
     margin: 0;
-    padding: 0;
-    background-image: url('https://images3.alphacoders.com/137/thumb-1920-1374575.png');
-    background-size: cover;
-    color: white;
+    padding: 20px;
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 20px; /* Jarak antar kontainer */
-}
-
-h1, h2 {
-    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3498db;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
 }
 
 main {
-    background-color: rgba(0, 0, 0, 0.5);
+    background: white;
     padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    border-radius: 10px;
-    margin-bottom: 20px; /* Jarak antar kontainer */
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.btn:hover {
+    background-color: #217dbb;
 }
 
 form div {
     margin-bottom: 15px;
 }
 
-label {
+form label {
     display: block;
+    margin-bottom: 5px;
 }
 
-input[type="text"], input[type="password"], input[type="file"] {
+input[type="text"], input[type="file"] {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 8px;
+    box-sizing: border-box;
 }
 
-.btn {
-    background-color: #007bff; /* Aksen biru */
+button {
+    background-color: #3498db;
     color: white;
-    padding: 10px 15px;
     border: none;
-    border-radius: 5px;
+    padding: 10px 15px;
     cursor: pointer;
-    text-decoration: none;
 }
 
-.btn:hover {
-    background-color: #0056b3; /* Aksen biru gelap saat hover */
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: left;
-}
-
-th {
-    background-color: #007bff; /* Aksen biru */
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.1); /* Warna latar belakang untuk baris genap */
+button:hover {
+    background-color: #217dbb;
 }

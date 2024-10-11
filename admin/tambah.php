@@ -3,7 +3,7 @@ session_start();
 include('../config/database.php');
 include('../functions.php');
 
-// Cek apakah user sudah login
+// Cek apakah user sudah login, kalau belum arahkan ke login
 if (!isset($_SESSION['admin'])) {
     header('Location: ../auth/login.php');
     exit();
@@ -13,12 +13,12 @@ if (!isset($_SESSION['admin'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nama_tugas = $_POST['nama_tugas'];
     $mata_kuliah = $_POST['mata_kuliah'];
-    $file_tugas = uploadFile(); // Upload file tugas
+    $file_tugas = uploadFile();
 
     // Simpan tugas baru ke database
     $sql = "INSERT INTO tugas (nama_tugas, mata_kuliah, file_tugas) VALUES ('$nama_tugas', '$mata_kuliah', '$file_tugas')";
     if ($conn->query($sql)) {
-        header('Location: dashboard.php'); // Arahkan ke dashboard setelah berhasil
+        header('Location: dashboard.php?status=added');
         exit();
     } else {
         $error = 'Gagal menambahkan tugas';
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="file" name="file_tugas" required>
             </div>
             <?php if (isset($error)): ?>
-                <p style="color:red;"><?php echo $error; ?></p>
+                <p style="color:red;"><?= $error; ?></p>
             <?php endif; ?>
             <div>
                 <button type="submit" class="btn">Tambah</button>

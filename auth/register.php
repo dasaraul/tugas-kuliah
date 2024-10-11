@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrasi Admin</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header>
@@ -56,7 +57,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p>Hubungi pengembang di WhatsApp 082210819939 untuk mendapatkan kunci unik.</p>
             </div>
             <?php if (isset($error)): ?>
-                <p style="color:red;"><?php echo $error; ?></p>
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Registrasi Gagal',
+                        text: '<?= $error; ?>',
+                    });
+                </script>
             <?php endif; ?>
             <div>
                 <button type="submit" class="btn">Register</button>
