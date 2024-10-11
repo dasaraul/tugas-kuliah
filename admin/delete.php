@@ -1,6 +1,3 @@
-
-#### **admin/delete.php**
-```php
 <?php
 session_start();
 include('../config/database.php');
