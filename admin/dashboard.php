@@ -48,10 +48,14 @@ $tugas = tampilkanTugas($conn);
                         <tr>
                             <td><?= $row['nama_tugas']; ?></td>
                             <td><?= $row['mata_kuliah']; ?></td>
-                            <td><a href="../assets/uploads/<?= $row['file_tugas']; ?>" target="_blank" class="btn">Download</a></td>
                             <td>
-                                <a href="edit.php?id=<?= $row['id']; ?>" class="btn">Edit</a>
-                                <a href="#" onclick="confirmDelete(<?= $row['id']; ?>)" class="btn">Hapus</a>
+                                <a href="../assets/uploads/<?= $row['file_tugas']; ?>" target="_blank" class="btn">Download</a>
+                            </td>
+                            <td>
+                                <div class="table-actions">
+                                    <a href="edit.php?id=<?= $row['id']; ?>" class="btn">Edit</a>
+                                    <a href="#" onclick="confirmDelete(<?= $row['id']; ?>)" class="btn">Hapus</a>
+                                </div>
                             </td>
                         </tr>
                     <?php endwhile; ?>

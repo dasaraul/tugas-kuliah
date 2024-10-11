@@ -22,7 +22,7 @@ $tugas = tampilkanTugas($conn);
 <body>
     <header>
         <h1>Daftar Tugas Kuliah</h1>
-        <?php if(isset($_SESSION['admin'])): ?>
+        <?php if (isset($_SESSION['admin'])): ?>
             <a href="auth/logout.php" class="btn">Logout</a>
         <?php endif; ?>
     </header>
@@ -33,13 +33,18 @@ $tugas = tampilkanTugas($conn);
         <?php if ($tugas->num_rows > 0): ?>
             <ul class="tugas-list">
                 <?php while ($row = $tugas->fetch_assoc()): ?>
-                    <li>
-                        <strong><?= $row['nama_tugas']; ?></strong> - <?= $row['mata_kuliah']; ?>
-                        <a href="assets/uploads/<?= $row['file_tugas']; ?>" target="_blank" class="btn">Download</a>
-                        <?php if(isset($_SESSION['admin'])): ?>
-                            <a href="admin/edit.php?id=<?= $row['id']; ?>" class="btn">Edit</a>
-                            <a href="#" onclick="confirmDelete(<?= $row['id']; ?>)" class="btn">Hapus</a>
-                        <?php endif; ?>
+                    <li class="tugas-item">
+                        <div class="tugas-details">
+                            <strong><?= $row['nama_tugas']; ?></strong>
+                            <span><?= $row['mata_kuliah']; ?></span>
+                        </div>
+                        <div class="table-actions">
+                            <a href="assets/uploads/<?= $row['file_tugas']; ?>" target="_blank" class="btn">Download</a>
+                            <?php if (isset($_SESSION['admin'])): ?>
+                                <a href="admin/edit.php?id=<?= $row['id']; ?>" class="btn">Edit</a>
+                                <a href="#" onclick="confirmDelete(<?= $row['id']; ?>)" class="btn">Hapus</a>
+                            <?php endif; ?>
+                        </div>
                     </li>
                 <?php endwhile; ?>
             </ul>

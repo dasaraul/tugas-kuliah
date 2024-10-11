@@ -18,7 +18,7 @@ header, footer {
 }
 
 main {
-    background: rgba(255, 255, 255, 0.85); /* Background putih dengan opacity */
+    background: rgba(128, 128, 128, 0.1); /* Background abu-abu dengan opacity 10% */
     padding: 20px;
     border-radius: 5px;
     margin-top: 20px;
@@ -29,23 +29,64 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.9); /* Putih dengan sedikit transparansi */
+    background: rgba(0, 0, 0, 0.1); /* Background hitam dengan opacity 10% */
     border-radius: 5px;
     overflow: hidden;
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Border sedikit transparan agar serasi */
 }
 
 th, td {
     padding: 10px;
     text-align: left;
+    color: #ffffff; /* Warna teks di tabel tetap putih untuk kontras */
 }
 
 th {
     background-color: rgba(0, 0, 0, 0.7); /* Hitam transparan */
-    color: #ffffff;
+}
+
+td {
+    background: rgba(0, 0, 0, 0.3); /* Hitam sedikit transparan untuk isi tabel */
+}
+
+.tugas-item {
+    display: flex;
+    justify-content: space-between; /* Pisahkan teks dan tombol download */
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3); /* Background hitam dengan transparansi */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.tugas-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Jarak antara nama tugas dan mata kuliah */
+    max-width: 70%; /* Agar tombol tidak terlalu rapat ke teks */
+}
+
+ul.tugas-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.tugas-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.5); /* Background hitam transparan untuk tiap item */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.tugas-item .btn {
+    margin-left: auto; /* Buat tombol tetap di sisi kanan */
 }
 
 .btn {
@@ -54,7 +95,6 @@ th {
     padding: 8px 12px;
     border-radius: 5px;
     text-decoration: none;
-    margin-right: 5px;
     transition: background-color 0.3s ease;
 }
 
@@ -92,16 +132,4 @@ button {
 
 button:hover {
     background-color: #217dbb;
-}
-
-ul.tugas-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul.tugas-list li {
-    background: rgba(0, 0, 0, 0.5); /* Background hitam transparan untuk tiap item */
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
 }
