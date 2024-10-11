@@ -87,9 +87,6 @@ Berikut adalah struktur folder dan file dalam proyek ini:
 ## Kontribusi
 Jika Anda ingin berkontribusi pada proyek ini, silakan buat *pull request* atau buka *issue* jika ada bug atau saran perbaikan.
 
-## Lisensi
-Proyek ini dilisensikan di bawah [MIT License](LICENSE).
-
 ## 👤 Kredit
 - **Telegram**: [@ImTamaa](https://t.me/ImTamaa)
 - **Website Owner**: [jawanich.my.id](https://jawanich.my.id/)
