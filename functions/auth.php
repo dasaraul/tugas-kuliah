@@ -19,7 +19,7 @@ function loginAdmin($username, $password, $conn) {
     if (password_verify($password, $user['password'])) {
         session_start(); // Mulai session untuk menyimpan data login
         $_SESSION['admin'] = $user['username']; // Simpan username di session
-        header("Location: ../admin/dashboard.php"); // Arahkan ke dashboard admin
+        header("Location: ../admin/dashboard.php");
     } else {
         // Jika login gagal, tampilkan pesan kesalahan
         echo "Login gagal.";

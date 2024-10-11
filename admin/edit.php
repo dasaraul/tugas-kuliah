@@ -2,9 +2,9 @@
 session_start();
 include('../config/database.php');
 include('../functions/auth.php');
-include('../functions/tugas.php'); // Pastikan file ini di-*include* biar bisa akses fungsi getTugasById
+include('../functions/tugas.php');
 
-// Cek dulu kalo user belum login sebagai admin, langsung aja arahkan ke halaman login
+// Cek apakah user sudah login sebagai admin, kalau belum arahkan ke login
 if (!isset($_SESSION['admin'])) {
     header('Location: ../auth/login.php');
     exit();
@@ -14,7 +14,7 @@ if (!isset($_SESSION['admin'])) {
 $id = $_GET['id'];
 $tugas = getTugasById($id, $conn);
 
-// Proses update tugas kalo form disubmit
+// Proses update tugas ketika form di-submit
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nama_tugas = $_POST['nama_tugas'];
     $mata_kuliah = $_POST['mata_kuliah'];
