@@ -2,7 +2,6 @@
 require '../config/database.php';
 require '../functions/auth.php';
 
-// Cek apakah unique key benar
 if (isset($_POST['register'])) {
     $unique_key = $_POST['unique_key'];
     if ($unique_key !== 'jawalu') {
@@ -10,7 +9,6 @@ if (isset($_POST['register'])) {
         exit();
     }
 
-    // Lakukan pendaftaran
     registerAdmin($_POST['username'], $_POST['password'], $conn);
 }
 ?>
