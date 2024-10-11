@@ -1,0 +1,15 @@
+# Mencegah tampilan indeks direktori
+Options -Indexes
+
+# Mengizinkan hanya file PHP
+<FilesMatch "\.(php)$">
+    Allow from all
+</FilesMatch>
+
+# Mengizinkan akses ke file tertentu (misalnya login.php)
+<Files "login.php">
+    Allow from all
+</Files>
+
+# Jika ingin mengizinkan akses hanya untuk admin, bisa ditambahkan:
+# Require all granted
